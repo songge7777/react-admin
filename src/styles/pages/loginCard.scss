@@ -1,0 +1,58 @@
+@import "../layout.scss";
+.loginCard {
+  &_layout {
+    width: 280px;
+    background: #ffffff;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 8px 8px 8px 8px;
+    opacity: 1;
+    border: 1px solid #ebedf1;
+    padding: 28px 0 40px 20px;
+    @include flex();
+    position: relative;
+    &_title {
+      font-size: 16px;
+      font-weight: 400;
+      color: #f08300;
+    }
+    &_div {
+      margin-top: 20px;
+      width: 240px;
+    }
+    .clickCode {
+      cursor: pointer;
+    }
+  }
+}
+.checkbox_layout {
+  display: flex;
+  div {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .agreement {
+    color: rgba(75, 73, 160, 1);
+  }
+}
+.ant-input {
+  &:focus {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+  &:active {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+  &:hover {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+  &:visited {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+  &:link {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+}

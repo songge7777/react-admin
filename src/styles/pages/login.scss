@@ -1,0 +1,96 @@
+@import "../layout.scss";
+#root {
+  height: 100%;
+}
+.login {
+  &_layout {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include flex();
+    justify-content: center;
+    align-items: center;
+    &_img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+    }
+    &_div {
+      width: 480px;
+      height: 560px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 8px 8px 8px 8px;
+      @include flex();
+      justify-content: start;
+      align-items: center;
+      position: relative;
+      &_switch {
+        // align-self: flex-end;
+        height: 80px;
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 80px;
+          height: 80px;
+        }
+        span {
+          position: absolute;
+          top: 27px;
+          right: 64px;
+          font-size: 14px;
+          font-family: Alibaba PuHuiTi-Regular, Alibaba PuHuiTi;
+          font-weight: 400;
+          color: #606266;
+        }
+      }
+      &_title {
+        font-size: 32px;
+        font-weight: 500;
+        color: #343130;
+        line-height: 40px;
+        margin-top: 46px;
+        margin-bottom: 40px;
+      }
+      &_from {
+        width: 360px;
+      }
+    }
+    &_register {
+      @include flex();
+      justify-content: start;
+      align-items: center;
+      &_title {
+        font-size: 32px;
+        font-weight: 500;
+        color: #343130;
+        line-height: 40px;
+        margin-top: 46px;
+        margin-bottom: 12px;
+      }
+      &_tip {
+        font-size: 16px;
+        font-weight: 400;
+        color: #606266;
+      }
+      &_img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .clickCode {
+      cursor: pointer;
+    }
+  }
+}
+.checkbox_layout {
+  display: flex;
+  div {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .agreement {
+    color: rgba(75, 73, 160, 1);
+  }
+}

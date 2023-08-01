@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@mixin flex($direction: column, $inline: block) {
+  display: if(inline==block, flex, inline-flex);
+  flex-direction: $direction;
+  flex-wrap: wrap;
+}
+
+@mixin borderLine($width) {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 0px;
+  width: $width;
+  border-bottom: 1px solid $primaryColor;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+@mixin textHidden() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,75 @@
+@import "./reset.scss";
+
+.cursor {
+  cursor: pointer;
+}
+
+$primaryColor: #f08300;
+
+.ant-btn-primary {
+  background: $primaryColor;
+  border-radius: 0 !important;
+}
+.ant-btn-primary:not(:disabled):hover {
+  background: $primaryColor;
+}
+
+button {
+  height: 40px;
+}
+.ant-btn-primary {
+  background: #f08300 !important;
+  border-color: #f08300 !important;
+}
+
+// 修改hover效果边框颜色
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: #f08300;
+}
+// 聚焦时 边线颜色为红色
+.ant-select-focused .ant-select-selector,
+.ant-select-selector:focus,
+.ant-select-selector:active {
+  border-color: #f08300 !important;
+  box-shadow: 0 0 2px #f08300 !important;
+}
+
+.ant-input {
+  &:focus {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+  &:active {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+  &:hover {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+  &:visited {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+  &:link {
+    // border: 0px;
+    border: 1px solid #f08300;
+  }
+}
+:where(.css-dev-only-do-not-override-1i536d8).ant-picker:hover,
+:where(.css-dev-only-do-not-override-1i536d8).ant-picker-focused {
+  border: 1px solid #f08300;
+}
+
+:where(.css-dev-only-do-not-override-1i536d8).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(
+    .ant-pagination-size-changer
+  ):hover
+  .ant-select-selector {
+  border: 1px solid #f08300;
+}
+.ant-btn {
+}
+:where(.css-dev-only-do-not-override-1i536d8).ant-btn-default:not(:disabled):hover {
+  border-color: #f08300;
+  color: #f08300;
+}
