@@ -7,35 +7,15 @@ import { useDispatch } from "react-redux";
 import { setLoginInfo } from "@/store/modules/login";
 import { useLocation, useNavigate } from "react-router-dom";
 
-type AgreementProps = {
-  checked?: boolean,
-  onChange?: (i: boolean) => {}
-}
-
-const Agreement: React.FC = (props: AgreementProps) => {
-  const { checked, onChange } = props;
-  const navigate = useNavigate();
-  const selfClick = () => onChange(!checked);
-  const goToPage = (id: number) => {
-    navigate(`/agreement?id=${id}`);
-  };
-  return <div className="checkbox_layout">
-    <Checkbox onClick={(r) => onChange(r)} checked={checked} />
-    <div>
-      <span onClick={selfClick}> 我已阅读并同意 </span>
-      <span onClick={() => goToPage(1)} className="agreement">《服务协议》</span>
-      <span onClick={selfClick}> 和 </span>
-      <span onClick={() => goToPage(2)} className="agreement">《隐私政策》</span>
-    </div>
-  </div>;
-};
-
 const Login = () => {
   const dispatch = useDispatch();
   const [formRef] = Form.useForm();
   const routeConfig = useLocation();
   const navigate = useNavigate();
   const onFinish = async (values: any) => {
+
+    navigate("/homeList");
+    
     // password: "yc20220804..",
     // username: "ycadmin"
     const { data } = await axios.post("/login", {

@@ -1,6 +1,10 @@
+import Layout from '@/pages/layout';
+import noFound from '@/pages/404';
+
 export interface routeType {
   path: string
   component?: any
+  element?: any
   children?: Array<routeType>
   meta?: {
     title?: string
@@ -12,18 +16,32 @@ export interface routeType {
 const routes: Array<routeType> = [
   {
     path: "/",
-    redirect: "/login",
-  },
-  {
-    path: "/home",
-    component: () => import("@/pages/home/index"),
+    element: Layout,
     meta: {
       title: "",
     },
     children: [
       {
-        path: "/homeList",
-        component: () => import("@/pages/home/list"),
+        path: "home",
+          children:[
+          {
+            path: "list",
+            component: () => import("@/pages/home/list"),
+          }
+        ]
+      },
+      {
+        path: "sub",
+        children:[
+          {
+            path: "one",
+            component: () => import("@/pages/sub/one"),
+          },
+          {
+            path: "two",
+            component: () => import("@/pages/sub/two"),
+          }
+        ]
       }
     ]
   },
@@ -36,7 +54,13 @@ const routes: Array<routeType> = [
   },
   {
     path: "*",
-    component: () => import("@/pages/login"),
+    element: Layout,
+    children:[
+      {
+        path: "*",
+        element: noFound
+      },
+    ],
     meta: {
       title: "404"
     }

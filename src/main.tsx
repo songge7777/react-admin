@@ -4,7 +4,7 @@ import "antd/dist/reset.css";
 import { Provider } from "react-redux";
 import { ConfigProvider } from "antd";
 
-import { HashRouter } from "react-router-dom";
+import { HashRouter,BrowserRouter } from "react-router-dom";
 import store from "@/store";
 import "@/styles/index.scss";
 import { persistor } from "@/store/index";
@@ -21,9 +21,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <ConfigProvider locale={zhCN}>
       <PersistGate loading={null} persistor={persistor}>
-        <HashRouter>
+        <BrowserRouter>
           <App />
-        </HashRouter>
+        </BrowserRouter>
       </PersistGate>
     </ConfigProvider>
   </Provider>

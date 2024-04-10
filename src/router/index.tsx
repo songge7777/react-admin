@@ -18,15 +18,21 @@ function renderRoutes(routes: Array<routeType>) {
 
     const res: resType = { ...item };
     if (!item?.path) return;
+    if (item?.element) {
+      const Component = item.element
+      res.element = <Component></Component>;
+    }
 
-    // component
     if (item?.component) {
       const Component = React.lazy(item.component);
       res.element = <React.Suspense fallback={<Spin size="large" />}>
-        <BeforeEach route={item}>
+         <Component />
+      </React.Suspense>
+       res.element = <React.Suspense fallback={<Spin size="large" />}>
+       <BeforeEach route={item}>
           <Component />
-        </BeforeEach>
-      </React.Suspense>;
+       </BeforeEach>
+     </React.Suspense>;
     }
 
     // children
@@ -43,6 +49,7 @@ function renderRoutes(routes: Array<routeType>) {
     return res;
   });
 }
+
 
 function BeforeEach(props: { route: routeType, children: any }) {
   if (props?.route?.meta?.title) {
